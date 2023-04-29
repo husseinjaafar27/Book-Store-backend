@@ -7,7 +7,12 @@ const bookRoute = require("./routes/bookRoutes");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:8080",
+    "https://book-store-frontend-zqpv.onrender.com"]
+  })
+);
 
 app.use("/api/users", userRoute);
 app.use("/api/books", bookRoute);
