@@ -9,8 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:8080",
-    "https://book-store-frontend-zqpv.onrender.com"]
+    origin: "https://book-store-backend-q9ak.onrender.com",
   })
 );
 
