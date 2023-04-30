@@ -1,20 +1,20 @@
 const express = require("express");
 require("dotenv").config();
 const mongoose = require("mongoose");
-// const cors = require("cors");
+const cors = require("cors");
 const userRoute = require("./routes/userRoutes");
 const bookRoute = require("./routes/bookRoutes");
 const app = express();
 
 app.use(express.json());
-// app.use(
-//   cors({
-//     origin: [
-//       "https://book-store-backend-q9ak.onrender.com",
-//       "http://localhost:3000",
-//     ],
-//   })
-// );
+app.use(
+  cors({
+    origin: [
+      "https://book-store-frontend-zqpv.onrender.com",
+      "http://localhost:3000",
+    ],
+  })
+);
 
 app.use("/api/users", userRoute);
 app.use("/api/books", bookRoute);
